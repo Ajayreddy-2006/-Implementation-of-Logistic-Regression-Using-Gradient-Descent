@@ -8,18 +8,40 @@ To write a program to implement the the Logistic Regression Using Gradient Desce
 2. Anaconda – Python 3.7 Installation / Jupyter notebook
 
 ## Algorithm
-1. Import the required libraries.
-2. Load the dataset.
-3.Define X and Y array.
-4.Define a function for costFunction,cost and gradient.
-5.Define a function to plot the decision boundary.
-6.Define a function to predict the Regression value. 
-## Program // Output:
+1.Load the Dataset
+
+2.Create a Copy of the Original Data
+
+3.Drop Irrelevant Columns (sl_no, salary)
+
+4.Check for Missing Values
+
+5.Check for Duplicate Rows
+
+6.Encode Categorical Features using Label Encoding
+
+7.Split Data into Features (X) and Target (y)
+
+8.Split Data into Training and Testing Sets
+
+9.Initialize and Train Logistic Regression Model
+
+10.Make Predictions on Test Set
+
+11.Evaluate Model using Accuracy Score
+
+12.Generate and Display Confusion Matrix
+
+13.Generate and Display Classification Report
+
+14.Make Prediction on a New Sample Input
+   
+## Program:
 ```
 /*
 Program to implement the the Logistic Regression Using Gradient Descent.
 Developed by: T Ajay
-RegisterNumber: 212223230007
+Register Number:  212223230007
 */
 ```
 ```
@@ -28,7 +50,7 @@ import numpy as np
 dataset=pd.read_csv("Placement_Data.csv")
 dataset
 ```
-![image](https://github.com/user-attachments/assets/b9263b8e-85bc-4215-a992-3dcac4bcc4df)
+![image](https://github.com/user-attachments/assets/d052c001-82cd-432e-a890-a38ce347f03d)
 
 ```
 dataset = dataset.drop('sl_no',axis=1)
@@ -44,7 +66,7 @@ dataset["status"]=dataset["status"].astype('category')
 dataset["hsc_s"]=dataset["hsc_s"].astype('category')
 dataset.dtypes
 ```
-![image](https://github.com/user-attachments/assets/10e93552-634f-4b90-9f1c-93121264344d)
+![image](https://github.com/user-attachments/assets/bcc92f8e-74aa-4b86-b27b-03cac284cf8c)
 
 ```
 dataset["gender"]=dataset["gender"].cat.codes
@@ -57,14 +79,14 @@ dataset["status"]=dataset["status"].cat.codes
 dataset["hsc_s"]=dataset["hsc_s"].cat.codes
 dataset
 ```
-![image](https://github.com/user-attachments/assets/94a85212-4dae-48b0-868a-3c7f13a38c16)
+![image](https://github.com/user-attachments/assets/ca76166a-7fa7-4d57-9b01-6f3a8b84d8af)
 
 ```
 X=dataset.iloc[:,:-1].values
 Y=dataset.iloc[:,-1].values
 Y
 ```
-![image](https://github.com/user-attachments/assets/dc9043b2-048c-4b79-afbd-f180ae646d2f)
+![image](https://github.com/user-attachments/assets/371e42a7-665d-4c35-9804-c75613853cfe)
 
 ```
 theta = np.random.randn(X.shape[1])
@@ -90,31 +112,36 @@ y_pred = predict(theta,X)
 accuracy = np.mean(y_pred.flatten()==y)
 print("Accuracy:", accuracy)
 ```
-![image](https://github.com/user-attachments/assets/b434ba72-7e3b-4209-bc0b-c7448c3632b2)
+![image](https://github.com/user-attachments/assets/cd0a4dd6-0a7b-4837-80d6-83701b97442d)
 
 ```
 print(y_pred)
 ```
-![image](https://github.com/user-attachments/assets/35d769b2-75a3-43b6-bd19-3d295b2305ab)
-
+![image](https://github.com/user-attachments/assets/85b20974-c564-459e-897c-b55d16eec77a)
 ```
+
 print(Y)
 ```
-![image](https://github.com/user-attachments/assets/c5652fd9-2c2f-4cca-9549-c2cb73dbb0b8)
+
+![image](https://github.com/user-attachments/assets/33ccfc2d-808f-44f9-b53b-7a826aa4f266)
 
 ```
 xnew = np.array([[0,87,0,95,0,2,78,2,0,0,1,0]])
 y_prednew = predict(theta,xnew)
 print(y_prednew)
 ```
-![image](https://github.com/user-attachments/assets/b599f115-5fe2-440b-ad06-527511a02148)
-
+![image](https://github.com/user-attachments/assets/a561406e-a89f-4664-847c-2a318c10120d)
 ```
 xnew = np.array([[0,0,0,0,0,2,8,2,0,0,1,0]])
 y_prednew = predict(theta,xnew)
 print(y_prednew)
+print("T Ajay")
+print(2122232300074)
 ```
-![image](https://github.com/user-attachments/assets/099f4f97-fe2b-4257-b347-b3e9e848e0e0)
+![image](https://github.com/user-attachments/assets/dbef4baa-c9e2-4674-97ae-5c96d05641c2)
+
+
 
 ## Result:
 Thus the program to implement the the Logistic Regression Using Gradient Descent is written and verified using python programming.
+
